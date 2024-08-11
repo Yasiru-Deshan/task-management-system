@@ -8,16 +8,6 @@ import InsightIcon from '../../../public/icons/LampCharge-Linear-32px.svg';
 import InboxIcon from '../../../public/icons/NotificationBing-Linear-32px.svg';
 import SettingsIcon from '../../../public/icons/Setting2-Linear-32px.svg';
 
-const sidebar_items = [
-    {id: 1, title: 'Home', icon: HomeIcon},
-    {id: 2, title: 'Tasks', icon: TasksIcon},
-    {id: 3, title: 'Report', icon: ReportIcon},
-    {id: 4, title: 'Insights', icon: InsightIcon},
-    {id: 5, title: 'Inbox', icon: InboxIcon},
-    {id: 6, title: 'Settings', icon: SettingsIcon}
- 
-]
-
 export default function SideBar() {
     return(
 
@@ -31,16 +21,31 @@ export default function SideBar() {
                 Code 94 Labs
 
                 </div>
-            <ul className={styles.sidebar}>
-                {sidebar_items.map((item)=>(
-                
-                    <li key={item.id}><Image
-                        src={item.icon}
-                        alt="Home"
-                        width={24}
-                        height={24}
-                    />{item.title}</li>     
-                ))}    
+            <ul className={styles.sidebar}>             
+                <li>
+                <HomeIcon width={24} height={24} stroke="currentColor" />
+                Home
+                </li>
+                <li>
+                <TasksIcon width={24} height={24} stroke="currentColor" />
+                Tasks
+                </li>
+                <li>
+                <ReportIcon width={24} height={24} stroke="currentColor" />
+                Report
+                </li>
+                <li>
+                <InsightIcon width={24} height={24} stroke="currentColor" />
+                Insights
+                </li>
+                <li>
+                <InboxIcon width={24} height={24} stroke="currentColor" />
+                Inbox
+                </li>
+                <li>
+                <SettingsIcon width={24} height={24} stroke="currentColor" />
+                Settings
+                </li>  
             </ul>
         </aside>
 
