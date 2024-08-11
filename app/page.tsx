@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 import Header from './components/header';
+import SideBar from './components/sidebar';
 
 type TaskCategory = 'todo' | 'inProgress' | 'completed';
 
@@ -31,17 +32,8 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <aside className={styles.sidebar}>
-        <ul>
-          <li>Home</li>
-          <li>Tasks</li>
-          <li>Report</li>
-          <li>Insights</li>
-          <li>Inbox</li>
-          <li>Settings</li>
-        </ul>
-      </aside>
-      
+
+      <SideBar/>
       <main className={styles.main}>
         <Header/>
         <div className={styles.board}>
