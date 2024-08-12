@@ -7,6 +7,7 @@ import SideBar from './components/sidebar';
 import TaskHeader from './components/taskheader';
 import AddTask from './components/addtask';
 import Task from './components/task';
+import Modal from './components/modal';
 
 type TaskCategory = 'Todo' | 'InProgress' | 'Completed';
 
@@ -29,6 +30,9 @@ export default function Home() {
     InProgress: [],
     Completed: []
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => setIsModalOpen(false);
 
   const addTask = (category: TaskCategory) => {
     const task = prompt('Enter a task:');
@@ -45,7 +49,7 @@ export default function Home() {
 
       <SideBar/>
       <main className={styles.main}>
-        <Header/>
+        <Header isModalOpen={setIsModalOpen}/>
         <div className={styles.board}>
           {categoryColors.map((category) => (
             <div key={category.category} className={styles.column}>
@@ -83,6 +87,8 @@ export default function Home() {
           ))}
         </div>
       </main>
+
+      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal}/>}
     </div>
   );
 }
