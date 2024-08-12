@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css';
 import Header from './components/header';
 import SideBar from './components/sidebar';
 import TaskHeader from './components/taskheader';
+import AddTask from './components/addtask';
 
 type TaskCategory = 'Todo' | 'InProgress' | 'Completed';
 
@@ -48,18 +49,34 @@ export default function Home() {
           {categoryColors.map((category) => (
             <div key={category.category} className={styles.column}>
               <TaskHeader color={category.color} category={category.category}/>
-              {/* <div className={styles.columnHeader}>
-                
-                <h3>{category === 'todo' ? 'Todo' : category === 'inProgress' ? 'In Progress' : 'Completed'}</h3>
-                <button onClick={() => addTask(category)}>+</button>
+              <AddTask/>
+              <div className='w-full flex items-center justify-center mt-10 cursor-pointer'>      
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-4"
+                >
+                  <path
+                    d="M6 12H18"
+                    stroke="#727272"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 18V6"
+                    stroke="#727272"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div className="ml-4 text-[#727272]">Add Task</div>
               </div>
-              <div className={styles.taskList}>
-                {tasks[category].map((task, index) => (
-                  <div key={index} className={styles.task}>
-                    {task}
-                  </div>
-                ))}
-              </div> */}
+              
             </div>
           ))}
         </div>
