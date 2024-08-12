@@ -26,7 +26,7 @@ const AddTask = () => {
             stroke-linejoin="round"
           />
         </svg>
-        <input className="text-[#727272] ml-4 focus:outline-none w-full mr-6" placeholder="Write a task name" />
+        <input className="text-black ml-4 focus:outline-none w-full mr-6" placeholder="Write a task name" />
         <hr className="text-[#727272]" />
       </div>
       <div className="w-full h-12 flex justify-between items-center text-black ml-4">
@@ -37,6 +37,7 @@ const AddTask = () => {
           viewBox="0 0 38 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="cursor-pointer"
         >
           <rect x="1" y="1" width="36" height="36" rx="18" fill="white" />
           <rect
@@ -69,7 +70,7 @@ const AddTask = () => {
           viewBox="0 0 38 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="ml-2"
+          className="ml-2 cursor-pointer"
         >
           <rect x="1" y="1" width="36" height="36" rx="18" fill="white" />
           <rect

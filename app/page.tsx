@@ -6,6 +6,7 @@ import Header from './components/header';
 import SideBar from './components/sidebar';
 import TaskHeader from './components/taskheader';
 import AddTask from './components/addtask';
+import Task from './components/task';
 
 type TaskCategory = 'Todo' | 'InProgress' | 'Completed';
 
@@ -50,6 +51,7 @@ export default function Home() {
             <div key={category.category} className={styles.column}>
               <TaskHeader color={category.color} category={category.category}/>
               <AddTask/>
+              <Task/>
               <div className='w-full flex items-center justify-center mt-10 cursor-pointer'>      
                 <svg
                   width="24"
