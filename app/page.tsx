@@ -4,20 +4,28 @@ import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 import Header from './components/header';
 import SideBar from './components/sidebar';
+import TaskHeader from './components/taskheader';
 
-type TaskCategory = 'todo' | 'inProgress' | 'completed';
+type TaskCategory = 'Todo' | 'InProgress' | 'Completed';
 
 interface Tasks {
-  todo: string[];
-  inProgress: string[];
-  completed: string[];
+  Todo: string[];
+  InProgress: string[];
+  Completed: string[];
 }
+
+const categoryColors: { category: TaskCategory; color: string }[] = [
+  { category: 'Todo', color: '#FFAD0D' },
+  { category: 'InProgress', color: '#0C6FBF' },
+  { category: 'Completed', color: '#2A7E2E' },
+];
+
 
 export default function Home() {
   const [tasks, setTasks] = useState<Tasks>({
-    todo: [],
-    inProgress: [],
-    completed: []
+    Todo: [],
+    InProgress: [],
+    Completed: []
   });
 
   const addTask = (category: TaskCategory) => {
@@ -37,9 +45,11 @@ export default function Home() {
       <main className={styles.main}>
         <Header/>
         <div className={styles.board}>
-          {(['todo', 'inProgress', 'completed'] as TaskCategory[]).map((category) => (
-            <div key={category} className={styles.column}>
-              <div className={styles.columnHeader}>
+          {categoryColors.map((category) => (
+            <div key={category.category} className={styles.column}>
+              <TaskHeader color={category.color} category={category.category}/>
+              {/* <div className={styles.columnHeader}>
+                
                 <h3>{category === 'todo' ? 'Todo' : category === 'inProgress' ? 'In Progress' : 'Completed'}</h3>
                 <button onClick={() => addTask(category)}>+</button>
               </div>
@@ -49,7 +59,7 @@ export default function Home() {
                     {task}
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
