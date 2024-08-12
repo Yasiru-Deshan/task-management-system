@@ -3,9 +3,10 @@ import React from "react";
 interface TaskHeaderProps {
   color: string;
   category: string;
+  handleNewTask: () => void;
 }
 
-const TaskHeader: React.FC<TaskHeaderProps> = ({ color, category }) => {
+const TaskHeader: React.FC<TaskHeaderProps> = ({ color, category,handleNewTask }) => {
   return (
     <div className="w-full h-12 flex justify-between items-center rounded-lg bg-white text-black">
       <div className="w-1/2 flex">
@@ -35,7 +36,8 @@ const TaskHeader: React.FC<TaskHeaderProps> = ({ color, category }) => {
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="mr-4"
+        className="mr-4 cursor-pointer"
+        onClick={handleNewTask}
       >
         <path
           d="M6 12H18"

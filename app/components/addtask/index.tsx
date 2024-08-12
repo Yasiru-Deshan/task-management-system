@@ -2,7 +2,7 @@ import React from "react";
 
 const AddTask = () => {
   return (
-    <div className="w-full h-24 rounded-lg bg-white mt-4">
+    <div className="w-full h-25 rounded-lg bg-white mt-4">
       <div className="w-full h-12 flex justify-left items-center ml-4">
         <svg
           width="24"
@@ -29,7 +29,8 @@ const AddTask = () => {
         <input className="text-black ml-4 focus:outline-none w-full mr-6" placeholder="Write a task name" />
         <hr className="text-[#727272]" />
       </div>
-      <div className="w-full h-12 flex justify-between items-center text-black ml-4">
+      <hr className="text-[#474747] mr-2 ml-2"></hr>
+      <div className="w-full h-12 flex justify-between items-center text-black ml-4 mt-1">
         <div className="flex justify-left items-center text-black">
         <svg
           width="38"
